@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lenin T — AI/ML &amp; Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ac:#3ee6ff;--mut:#8b8b99;--g:linear-gradient(var(--ac),var(--ac));color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:#000;color:#f4f4f8;font:300 16px/1.6 Outfit,system-ui,sans-serif;overflow-x:hidden;cursor:none}
+a{color:inherit;text-decoration:none}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:0;transition:opacity 1.6s}
+#dot{position:fixed;top:0;left:0;width:18px;height:18px;margin:-9px;border-radius:50%;background:#bff8ff;box-shadow:0 0 22px #3ee6ffcc;z-index:9;pointer-events:none;transition:width .25s,height .25s,margin .25s}
+#dot.h{width:46px;height:46px;margin:-23px;opacity:.5}
+nav,.soc,.res{position:fixed;z-index:5;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+nav{top:0;left:0;right:0;display:flex;justify-content:space-between;padding:calc(18px + env(safe-area-inset-top,0px)) 4vw 18px}
+nav b{font-weight:800;font-size:17px;letter-spacing:.16em}nav div{display:flex;gap:2.2rem}
+.soc{left:4vw;bottom:calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px;color:var(--mut)}
+.res{right:4vw;bottom:calc(22px + env(safe-area-inset-bottom,0px));color:var(--mut)}
+.soc a:hover,.res:hover{color:#fff}
+section{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:90px 8vw}
+.r{margin-left:auto;width:min(44vw,540px)}
+.k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+h1{font-weight:800;font-size:clamp(34px,5vw,68px);line-height:1;text-transform:uppercase;letter-spacing:-.01em}
+h1 em{display:block;font-style:normal;color:var(--ac);-webkit-text-stroke:0;perspective:600px}
+h2{font-weight:300;font-size:clamp(30px,4.6vw,60px);line-height:1.1}
+h2 i,.big i{font-style:normal;color:var(--ac)}
+.big{font-weight:800;font-size:clamp(36px,5.6vw,84px);line-height:.95;text-transform:uppercase}
+.flip{display:inline-block;animation:fl .7s both}
+@keyframes fl{from{transform:translateY(70%) rotateX(80deg);opacity:0}to{transform:none;opacity:1}}
+.v{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.v.in{opacity:1;transform:none}
+.br{padding:26px 28px;background:var(--g) 0 0/14px 1px no-repeat,var(--g) 0 0/1px 14px no-repeat,var(--g) 100% 0/14px 1px no-repeat,var(--g) 100% 0/1px 14px no-repeat,var(--g) 0 100%/14px 1px no-repeat,var(--g) 0 100%/1px 14px no-repeat,var(--g) 100% 100%/14px 1px no-repeat,var(--g) 100% 100%/1px 14px no-repeat,rgba(10,10,18,.55)}
+.it+.it{margin-top:22px;padding-top:22px;border-top:1px dashed #2a2a3a}
+.it h3{font-size:15px;letter-spacing:.18em;font-weight:600;text-transform:uppercase}
+.it p{font-size:14px;color:#b9b9c6;margin:6px 0 10px}
+.tg span{display:inline-block;font-size:11px;border:1px solid #1f4a55;border-radius:20px;padding:1px 10px;margin:0 6px 6px 0;color:#aef3ff}
+.tl{margin:40px auto 0;width:min(1000px,100%);position:relative}
+.tl:before{content:"";position:absolute;left:50%;top:0;width:2px;height:0;background:linear-gradient(var(--ac),#0d4c5a);box-shadow:0 0 14px var(--ac);transition:height 2.2s .3s}
+.tl.in:before{height:100%}
+.row3{display:grid;grid-template-columns:1fr 120px 1fr;gap:32px;padding:20px 0;align-items:start}
+.row3 h4{font-weight:600;font-size:17px;line-height:1.25}.row3 small{color:var(--mut);display:block}
+.row3 b{font-weight:300;font-size:24px;text-align:center}.row3 p{font-size:14px;color:#b9b9c6}
+.row{display:flex;gap:22px;overflow-x:auto;margin:34px -8vw 0;padding:0 8vw 16px;scrollbar-width:none;cursor:grab}
+.row::-webkit-scrollbar{display:none}
+.card{flex:0 0 min(78vw,400px);border:1px solid #1f1f2c;background:#07070c;transition:border-color .3s,transform .4s}
+.card:hover{border-color:var(--ac);transform:translateY(-6px)}
+.pv{height:160px;position:relative;overflow:hidden}
+.pv b{position:absolute;left:20px;bottom:-10px;font-size:110px;font-weight:800;color:#0003;line-height:1}
+.cb{padding:20px 22px 24px}.cb small{color:var(--mut);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.cb h3{font-size:22px;font-weight:600;margin:4px 0 8px}.cb p{font-size:14px;color:#b9b9c6;margin-bottom:12px}
+#tech{text-align:center;justify-content:flex-start;padding-top:16vh}
+.btn{display:inline-block;border:1px solid #1f4a55;border-radius:40px;padding:8px 22px;margin:6px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+.btn:hover{background:var(--ac);color:#000}
+#sig{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+#pb{position:fixed;right:14px;top:50%;height:30vh;width:2px;margin-top:-15vh;background:#14262c;z-index:5}#pb i{display:block;width:100%;background:var(--ac);box-shadow:0 0 10px var(--ac)}
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.14em;border:1px solid #1f4a55;border-radius:30px;padding:4px 14px;margin-bottom:18px;color:#aef3ff;text-transform:uppercase}
+.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:#4dffa6;box-shadow:0 0 8px #4dffa6;animation:bl 1.4s infinite}@keyframes bl{50%{opacity:.2}}
+.card{position:relative;--mx:50%;--my:50%}.card:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:.3s;background:radial-gradient(260px circle at var(--mx) var(--my),#3ee6ff26,transparent 60%)}.card:hover:after{opacity:1}
+.nm{font-weight:800;font-size:clamp(44px,5.8vw,92px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;background:linear-gradient(100deg,#fff 45%,var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.role{font-size:clamp(18px,2.2vw,32px);font-weight:300}.role .flip{color:var(--ac);font-weight:600}
+.hr{width:min(44vw,620px)}
+.btn.p{background:var(--ac);color:#000;border-color:var(--ac);font-weight:600}.btn.p:hover{background:#fff;border-color:#fff}
+.mail{font-size:clamp(20px,3.4vw,46px);font-weight:300;border-bottom:1px solid #1f4a55;padding-bottom:4px;transition:color .3s,border-color .3s}.mail:hover{color:var(--ac);border-color:var(--ac)}
+#contact h2{font-weight:600}
+@media(pointer:coarse){body{cursor:auto}#dot{display:none}}
+@media(max-width:800px){#contact{justify-content:center!important}section{justify-content:flex-end;padding-bottom:13vh}.r{width:auto;margin:0}nav div{gap:1rem}.soc{display:none}.row3{grid-template-columns:1fr 60px;}.row3 p{grid-column:1/-1}.tl:before{left:auto;right:28px}#tech{justify-content:flex-start;padding-top:14vh}}
+@media(prefers-reduced-motion:reduce){.flip,.v{animation:none;transition:none;opacity:1;transform:none}}
+</style></head><body>
+<canvas id="sig"></canvas><canvas id="c"></canvas><i id="dot"></i><div id="pb"><i></i></div>
+<nav><b>Lenin T</b><div><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav>
+<div class="soc"><a href="https://github.com/Lenin-afk">GitHub</a><a href="https://www.linkedin.com/in/lenin-t/">LinkedIn</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=leninrithick%40gmail.com" target="_blank" rel="noopener noreferrer">Mail</a></div>
+<a class="res" href="Lenin_T_Resume.pdf" download>Resume ↓</a>
+
+<section id="home"><div class="r hr"><p class="k v">Hello, I'm</p>
+<h1 class="v nm" style="--d:.1s">Lenin T</h1><p class="v role" style="--d:.2s"><span id="fw"><span class="flip">AI / ML</span></span> Engineer</p>
+<p class="v" style="--d:.3s;margin-top:20px;color:#b9b9c6;max-width:380px">ECE graduate building practical AI/ML and software solutions.</p></div></section>
+
+<section id="about"><div class="r"><p class="k v">About me</p>
+<p class="v" style="--d:.1s;font-size:clamp(18px,1.8vw,24px);line-height:1.5;font-weight:400">I'm an electronics graduate turned AI and software engineer. I came to code through circuits, and what I enjoy most is turning an idea into something that runs.</p>
+<p class="v" style="--d:.22s;margin-top:16px;color:#b9b9c6">I'm building a strong foundation in machine learning, deep learning and GenAI with Python and PyTorch, and applying it through projects like ToLet, a full-stack platform I built and deployed. I'm looking for an entry-level role where I can contribute, learn quickly and grow.</p>
+<div class="v tg" style="--d:.34s;margin-top:18px"><span>Learning: deep learning + GenAI</span><span>Building: full-stack &amp; ML projects</span></div></div></section>
+
+<section id="do"><div class="big v" style="position:absolute;left:8vw;top:16vh">What<br>I <i>do</i></div>
+<div class="r br v" style="--d:.2s"><div class="it"><h3>AI / ML</h3><p>Machine learning, deep learning and GenAI. Learning by building with PyTorch and scikit-learn.</p><div class="tg"><span>PyTorch</span><span>scikit-learn</span><span>LLMs</span><span>Prompt Eng</span></div></div>
+<div class="it"><h3>Software</h3><p>Python backends and REST APIs with FastAPI and PostgreSQL, with React on the front.</p><div class="tg"><span>Python</span><span>FastAPI</span><span>SQL</span><span>React</span><span>Docker</span></div></div>
+<div class="it"><h3>Data</h3><p>Cleaning, exploring and visualizing data with NumPy and Pandas.</p><div class="tg"><span>NumPy</span><span>Pandas</span><span>EDA</span><span>Statistics</span></div></div></div></section>
+
+<section id="career"><h2 class="v" style="text-align:center">My career &amp;<br><i>experience</i></h2>
+<div class="tl v" style="--d:.2s">
+<div class="row3"><div><h4>B.E. Electronics &amp; Communication<small>Kumaraguru College of Technology</small></h4></div><b>2022</b><p>Began my Bachelor of Engineering in Electronics and Communication Engineering.</p></div>
+<div class="row3"><div><h4>Started AI/ML &amp; software<small>Self-driven</small></h4></div><b>2026</b><p>Began focused study of machine learning, deep learning with PyTorch and Python backends with FastAPI, and built and deployed ToLet Coimbatore.</p></div>
+<div class="row3"><div><h4>Graduated<small>Kumaraguru College of Technology</small></h4></div><b>MAY '26</b><p>Completed my B.E. with a CGPA of 7.90.</p></div>
+<div class="row3"><div><h4>Job search &amp; building<small>AI/ML · Software engineering</small></h4></div><b>NOW</b><p>Looking for an entry-level role while I keep learning and building projects.</p></div></div></section>
+
+<section id="work"><h2 class="v">My <i>Work</i></h2><div class="row v" id="row" style="--d:.15s">
+<a class="card" href="https://github.com/Lenin-afk"><div class="pv" style="background:radial-gradient(circle at 20% 90%,#6d7bff,#12122a 70%)"><b>01</b></div><div class="cb"><small>Full-stack · Apr–Jun 2026</small><h3>ToLet Coimbatore</h3><p>Broker-free room rentals: FastAPI + PostgreSQL API with JWT auth, Cloudinary photos, React + Leaflet map and PWA, deployed on Railway.</p><div class="tg"><span>FastAPI</span><span>PostgreSQL</span><span>React</span><span>Leaflet</span></div></div></a>
+<div class="card"><div class="pv" style="background:radial-gradient(circle at 80% 90%,#c77dff,#14081f 70%)"><b>02</b></div><div class="cb"><small>ML · up next</small><h3>Predictive Maintenance ML</h3><p>Machine-failure prediction on the AI4I 2020 dataset, served through FastAPI and PostgreSQL in Docker.</p><div class="tg"><span>scikit-learn</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span></div></div></div>
+<div class="card"><div class="pv" style="background:radial-gradient(circle at 30% 100%,#4dffa6,#08150f 70%)"><b>03</b></div><div class="cb"><small>Hardware roots · 2024–26</small><h3>Where it all started</h3><p>Vehicle platooning, an IoT factory monitor and an RF car: where I learned to debug real systems before moving to software.</p><div class="tg"><span>ESP32</span><span>Arduino</span><span>ESP-NOW</span></div></div></div>
+<a class="card" href="https://github.com/Lenin-afk"><div class="pv" style="background:radial-gradient(circle at 70% 100%,#ff8fb1,#1c0b14 70%)"><b>04</b></div><div class="cb"><small>Learning log</small><h3>Follow along</h3><p>Follow along on GitHub as I learn PyTorch, deep learning and GenAI.</p><div class="tg"><span>PyTorch</span><span>GenAI</span><span>LLMs</span></div></div></a>
+</div></section>
+
+<section id="tech"><h2 style="letter-spacing:.06em;text-transform:uppercase" class="v">My Tech Stack</h2><p class="v" style="--d:.15s;margin-top:10px;color:#b9b9c6">The tools I use to build and learn<br><small style="color:var(--mut)">move your mouse to tilt the orbit · click to speed it up</small></p></section>
+<section id="contact" style="align-items:center;text-align:center"><p class="k v">Contact</p><h2 class="v" style="--d:.1s">Let's build<br>something <i>great</i></h2>
+<p class="v" style="--d:.2s;max-width:520px;margin:18px auto 28px;color:#b9b9c6">I'm looking for an entry-level role in AI/ML or software engineering. If you're hiring, or want to talk about something you're building, my inbox is open.</p>
+<a class="v mail" style="--d:.3s" href="https://mail.google.com/mail/?view=cm&fs=1&to=leninrithick%40gmail.com" target="_blank" rel="noopener noreferrer">leninrithick@gmail.com</a>
+<div class="v" style="--d:.4s;margin-top:30px"><a class="btn p" href="Lenin_T_Resume.pdf" download>Download resume ↓</a><a class="btn" href="https://www.linkedin.com/in/lenin-t/">LinkedIn</a><a class="btn" href="https://github.com/Lenin-afk">GitHub</a></div>
+<p class="v" style="--d:.5s;margin-top:60px;font-size:12px;color:var(--mut);letter-spacing:.14em">© 2026 LENIN T · OPEN TO WORK</p></section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),dot=$('#dot'),clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),L=(a,b,t)=>a+(b-a)*t,ss=t=>t*t*(3-2*t);
+let mx=0,my=0,tx=0,ty=0,px=0,py=0,sx=innerWidth/2,sy=innerHeight/2,dx=sx,dy=sy;
+addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;tx=px/innerWidth*2-1;ty=-(py/innerHeight*2-1);dot.classList.toggle('h',!!e.target.closest('a,.card,.btn'))});
+// reveal + flip words
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.2});
+document.querySelectorAll('.v').forEach(e=>io.observe(e));
+const W=['AI / ML','Software','GenAI','Python'],fw=$('#fw');let wi=0;
+setInterval(()=>{wi=(wi+1)%W.length;fw.innerHTML='<span class="flip">'+W[wi]+'</span>'},2400);
+// drag-scroll work row
+const row=$('#row');let dn=0,x0=0,s0=0;
+row.onpointerdown=e=>{dn=1;x0=e.clientX;s0=row.scrollLeft};addEventListener('pointerup',()=>dn=0);
+row.onpointermove=e=>{if(dn)row.scrollLeft=s0-(e.clientX-x0)};
+
+let ACC='62,230,255';const sg2=$('#sig'),sx2=sg2.getContext('2d'),pbi=$('#pb i');let sv=0,ls=scrollY;
+function sr(){sg2.width=innerWidth/2;sg2.height=innerHeight/2}sr();addEventListener('resize',sr);
+function sdraw(now){requestAnimationFrame(sdraw);const w=sg2.width,h=sg2.height;sx2.clearRect(0,0,w,h);sv+=(Math.abs(scrollY-ls)-sv)*.1;ls=scrollY;
+sx2.lineWidth=1;sx2.strokeStyle='rgba('+ACC+',.05)';for(let x=0;x<w;x+=24){sx2.beginPath();sx2.moveTo(x,0);sx2.lineTo(x,h);sx2.stroke()}for(let y=0;y<h;y+=24){sx2.beginPath();sx2.moveTo(0,y);sx2.lineTo(w,y);sx2.stroke()}
+[[.3,.012,1],[.55,.02,-1.3],[.8,.03,.8]].forEach((o,k)=>{sx2.strokeStyle='rgba('+ACC+','+(.1+k*.05)+')';sx2.beginPath();for(let x=0;x<=w;x+=3){const a=(14+sv*1.4+(ty+1)*12)*(k+1)/2,y=h*o[0]+Math.sin(x*o[1]*3+now/700*o[2])*a;x?sx2.lineTo(x,y):sx2.moveTo(x,y)}sx2.stroke()});
+pbi.style.height=clamp(scrollY/Math.max(1,document.body.scrollHeight-innerHeight),0,1)*100+'%'}
+requestAnimationFrame(sdraw);
+document.querySelectorAll('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');c.style.transform='perspective(700px) rotateY('+(x-.5)*12+'deg) rotateX('+(.5-y)*12+'deg) translateY(-6px)'});c.addEventListener('pointerleave',()=>c.style.transform='')});
+addEventListener('click',e=>{e.target.closest&&e.target.closest('#tech')&&window.__burst&&window.__burst()});
+try{
+const cv=$('#c'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,100);cam.position.z=14;
+sc.add(new THREE.AmbientLight(0xffffff,.55));
+const key=new THREE.DirectionalLight(0xffffff,1.15);key.position.set(3,5,7);sc.add(key);
+const rl=new THREE.PointLight(0x3ee6ff,2.4,30);rl.position.set(-5,2,-4);sc.add(rl);
+const rr=new THREE.PointLight(0xffb454,1.2,30);rr.position.set(6,-1,-3);sc.add(rr);
+let hw=6,hh=3.75,mob=false;
+function rs(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();hh=Math.tan(Math.PI/12)*14;hw=hh*cam.aspect;mob=cam.aspect<.9}
+addEventListener('resize',rs);rs();
+const M=(c,r=.6,e=0)=>new THREE.MeshStandardMaterial({color:c,roughness:r,emissive:e}),SP=(r,w=24,h=16)=>new THREE.SphereGeometry(r,w,h),BX=(a,b,c)=>new THREE.BoxGeometry(a,b,c),CY=(a,b,h)=>new THREE.CylinderGeometry(a,a,h,14);
+const mk=(g,m,x,y,z,p)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);p&&p.add(o);return o};
+const sk=M(0xc98a66,.5),hd=M(0x0f2a33,.8),wh=M(0xf5f5f8,.4),dk=M(0x120e0e,.7),cp=M(0x1b2238,.6),wd=M(0xb0763c,.6),pk=M(0x0c1419,.4);
+// glow
+const gc=document.createElement('canvas');gc.width=gc.height=128;const g2=gc.getContext('2d'),gr=g2.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,'rgba(255,255,255,.45)');gr.addColorStop(1,'rgba(255,255,255,0)');g2.fillStyle=gr;g2.fillRect(0,0,128,128);
+const glow=mk(new THREE.PlaneGeometry(9,9),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(gc),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}),0,0,-1.5,sc);
+// character: LT-01, a hovering robot companion (replaces the human)
+const mt=M(0xcfdde6,.25),dm=M(0x13222c,.5),nb=new THREE.MeshBasicMaterial({color:0x3ee6ff});
+const ch=new THREE.Group();sc.add(ch);
+mk(SP(1,32,24),mt,0,-2.2,0,ch).scale.set(1.35,1.55,1.1);
+mk(new THREE.TorusGeometry(1,.07,10,40),nb,0,-1.5,0,ch).rotation.x=Math.PI/2;
+const core=mk(SP(.3,20,14),nb,0,-2.3,1.12,ch);mk(new THREE.TorusGeometry(.48,.05,8,32),dm,0,-2.3,1.1,ch);
+mk(new THREE.ConeGeometry(.9,1.2,24),dm,0,-4.2,0,ch).rotation.x=Math.PI;
+const fl=mk(new THREE.ConeGeometry(.55,1.4,16),new THREE.MeshBasicMaterial({color:0x3ee6ff,transparent:true,opacity:.55}),0,-5.2,0,ch);fl.rotation.x=Math.PI;
+const head=new THREE.Group();head.position.y=-.95;ch.add(head);const H=new THREE.Group();H.position.y=.95;head.add(H);
+mk(SP(1,40,30),mt,0,0,0,H).scale.set(1.35,1,1.05);mk(BX(1.95,1.15,.25),dm,0,0,.98,H);
+const fc=document.createElement('canvas');fc.width=256;fc.height=144;const fx=fc.getContext('2d'),ftx=new THREE.CanvasTexture(fc);
+mk(new THREE.PlaneGeometry(1.8,1),new THREE.MeshBasicMaterial({map:ftx,toneMapped:false}),0,0,1.115,H);
+mk(CY(.05,0,.8),dm,0,1.3,0,H);const led=mk(SP(.15),nb,0,1.78,0,H);
+[-1,1].forEach(s=>{mk(CY(.4,0,.24),dm,s*1.42,0,0,H).rotation.z=Math.PI/2;mk(new THREE.TorusGeometry(.3,.04,8,28),nb,s*1.56,0,0,H).rotation.y=Math.PI/2});
+function drawFace(now){const w=256,h=144,hp=cur.d>.5,bl=(now%3400)<140?.12:1,ox=mx*16,oy=-my*10;
+fx.fillStyle='#02121a';fx.fillRect(0,0,w,h);fx.fillStyle=fx.strokeStyle='#3ee6ff';fx.lineWidth=12;fx.lineCap='round';
+[84,172].forEach(cx=>{fx.beginPath();if(hp){fx.arc(cx+ox,82+oy,20,Math.PI*1.1,Math.PI*1.9);fx.stroke()}else{(fx.roundRect||fx.rect).call(fx,cx+ox-20,66+oy-26*bl,40,52*bl,12);fx.fill()}});
+fx.lineWidth=7;fx.beginPath();fx.moveTo(108,116);fx.quadraticCurveTo(128,hp?138:120,148,116);fx.stroke();ftx.needsUpdate=true}
+const arms=[-1,1].map(s=>{const p=new THREE.Group();p.position.set(s*1.7,-1.9,0);ch.add(p);mk(CY(.2,0,1.5),mt,0,-.75,0,p);mk(SP(.32),dm,0,-1.6,0,p);mk(new THREE.TorusGeometry(.38,.04,8,24),nb,0,-1.6,0,p).rotation.x=Math.PI/2;p.userData.s=s;return p});
+// workbench: floating laptop + holo screen showing a net training
+const seat=new THREE.Group();ch.add(seat);
+mk(BX(2.8,.1,1.8),dm,.5,-2.95,2.9,seat);mk(BX(2.4,.02,1.3),M(0x0a2a33,.4,0x0a5566),.5,-2.89,2.95,seat);
+mk(new THREE.TorusGeometry(1.9,.015,6,80),nb,.5,-2.95,2.9,seat).rotation.x=Math.PI/2;
+const sgc=document.createElement('canvas');sgc.width=256;sgc.height=160;const sgx=sgc.getContext('2d'),stex=new THREE.CanvasTexture(sgc);
+mk(new THREE.PlaneGeometry(2.4,1.4),new THREE.MeshBasicMaterial({map:stex,side:2}),.5,-1.35,3.9,seat);
+mk(new THREE.CircleGeometry(3,40),new THREE.MeshBasicMaterial({color:0x3ee6ff,transparent:true,opacity:.14}),0,-5.6,1.5,seat).rotation.x=-Math.PI/2;
+function drawScope(now){if(!seat.visible)return;const w=256,h=160,ly=[3,5,5,2],P=(a,i)=>[28+a*66,8+(i+.5)*(86/ly[a])];sgx.fillStyle='#04141a';sgx.fillRect(0,0,w,h);sgx.lineWidth=1;
+for(let a=0;a<3;a++)for(let i=0;i<ly[a];i++)for(let j=0;j<ly[a+1];j++){const p=P(a,i),q=P(a+1,j);sgx.strokeStyle='rgba(62,230,255,'+(.1+.3*Math.max(0,Math.sin(now/260+i*1.7+j*2.3+a)))+')';sgx.beginPath();sgx.moveTo(p[0],p[1]);sgx.lineTo(q[0],q[1]);sgx.stroke()}
+sgx.fillStyle='#9ff7ff';ly.forEach((n,a)=>{for(let i=0;i<n;i++){const p=P(a,i);sgx.beginPath();sgx.arc(p[0],p[1],4,0,7);sgx.fill()}});
+sgx.strokeStyle='#4dffa6';sgx.lineWidth=2;sgx.beginPath();const m=(now/30)%(w-20);for(let x=0;x<=m;x++){const y=148-38*Math.exp(-x/70)+Math.sin(x*.5)*2;x?sgx.lineTo(10+x,y):sgx.moveTo(10+x,y)}sgx.stroke();
+sgx.fillStyle='#5b7f88';sgx.font='11px monospace';sgx.fillText('loss ↓  training...',10,104);stex.needsUpdate=true}
+// tech stack: an orbital system of hex chips around a glowing core (replaces the balls)
+const LB=[['Python','#ffd43b'],['PyTorch','#ee4c2c'],['sklearn','#f7931e'],['Pandas','#9b8cff'],['NumPy','#4dabf7'],['SQL','#4aa3df'],['FastAPI','#05d9b0'],['LLMs','#ff7ad9'],['GenAI','#c77dff'],['Docker','#2496ed'],['Postgres','#6b9bd1'],['Git','#ff6a4d'],['Linux','#e8e8e8'],['React','#61dafb'],['AWS','#ff9900']];
+const orb=new THREE.Group();sc.add(orb);orb.visible=false;orb.position.set(0,-1.1,0);const chips=[],RS=[2.3,3.5,4.7],SPD=[.55,-.38,.27];
+const oc=mk(new THREE.IcosahedronGeometry(.8,1),new THREE.MeshBasicMaterial({color:0x3ee6ff,wireframe:true}),0,0,0,orb);mk(SP(.42),new THREE.MeshBasicMaterial({color:0x9ff7ff}),0,0,0,orb);
+RS.forEach(r=>mk(new THREE.TorusGeometry(r,.012,6,120),new THREE.MeshBasicMaterial({color:0x3ee6ff,transparent:true,opacity:.28}),0,0,0,orb).rotation.x=Math.PI/2);
+function initO(){const hx=new THREE.CylinderGeometry(.5,.5,.18,6),cnt=[0,0,0],seen=[0,0,0];LB.forEach((l,i)=>cnt[i%3]++);
+LB.forEach((l,i)=>{const ri=i%3,c=document.createElement('canvas');c.width=256;c.height=96;const x=c.getContext('2d');x.fillStyle='rgba(4,16,22,.85)';x.strokeStyle=l[1];x.lineWidth=5;x.beginPath();(x.roundRect||x.rect).call(x,6,10,244,76,38);x.fill();x.stroke();x.fillStyle='#fff';x.font='800 42px Outfit,Arial';x.textAlign='center';x.textBaseline='middle';x.fillText(l[0],128,50);
+const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;const g=new THREE.Group();orb.add(g);
+const m=mk(hx,new THREE.MeshStandardMaterial({color:l[1],emissive:l[1],emissiveIntensity:.5,roughness:.35,metalness:.5}),0,0,0,g);
+const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthWrite:false}));sp.scale.set(1.7,.64,1);sp.position.y=.62;g.add(sp);
+chips.push({g,m,r:RS[ri],a:Math.PI*2*seen[ri]++/cnt[ri]+ri,v:SPD[ri]})})}
+// scroll state
+const S=[...document.querySelectorAll('section')];
+const T=[[-.55,.8,.85,0,0],[-.52,.5,.95,.3,0],[-.25,1.5,.65,.9,1],[-.2,9,.65,.9,1],[-.2,9,.65,.9,1],[-.2,9,.65,.9,1],[-.2,9,.65,.9,1]];
+const cur={x:0,y:-6,s:1,ry:0,d:0};let os=0,boost=0,t0=performance.now();
+window.__burst=()=>{boost=4};
+(document.fonts?document.fonts.load('800 42px Outfit').catch(()=>0):Promise.resolve()).then(initO);
+function loop(now){requestAnimationFrame(loop);const dt=Math.min((now-t0)/1000,.033);t0=now;
+mx+=(tx-mx)*.08;my+=(ty-my)*.08;dx+=(px-dx)*.2;dy+=(py-dy)*.2;dot.style.transform='translate('+dx+'px,'+dy+'px)';
+const yy=scrollY+innerHeight/2;let i=0;S.forEach((s,k)=>{if(s.offsetTop<=yy)i=k});const f=clamp((yy-S[i].offsetTop)/S[i].offsetHeight,0,1),t=ss(clamp((f-.5)*2,0,1)),A=T[i],Z=T[Math.min(i+1,6)];
+let q=A.map((v,k)=>L(v,Z[k],t));if(mob){q[0]=0;q[1]=q[1]>6?q[1]:q[1]+(q[4]>.5?.9:1.5);q[2]*=.8}
+const k=.07;cur.x+=(q[0]*hw-cur.x)*k;cur.y+=(q[1]-cur.y)*k;cur.s+=(q[2]-cur.s)*k;cur.ry+=(q[3]-cur.ry)*k;cur.d+=(q[4]-cur.d)*k;
+ch.visible=cur.y<7.5;ch.position.set(cur.x,cur.y+Math.sin(now/900)*.09,0);ch.scale.setScalar(cur.s);ch.rotation.y=cur.ry;
+head.rotation.y=mx*.6*(1-.6*cur.d);head.rotation.x=-my*.3*(1-.5*cur.d)+Math.sin(now/1300)*.02;
+arms.forEach(a=>{a.rotation.x=-1*cur.d+Math.sin(now/130+a.userData.s)*.025*cur.d;a.rotation.z=a.userData.s*(.08-.2*cur.d)});
+seat.visible=cur.d>.02;seat.scale.setScalar(Math.max(.001,cur.d));
+glow.position.set(cur.x,cur.y-1.2*cur.s,-1.5);glow.scale.setScalar(cur.s*(1+cur.d*.4));glow.visible=ch.visible;
+core.scale.setScalar(1+Math.sin(now/260)*.15);led.scale.setScalar(1+Math.sin(now/200)*.4);fl.scale.y=1+Math.sin(now/90)*.15;drawFace(now);drawScope(now);
+const on=chips.length>0&&((i===5&&f<.7)||(i===4&&f>.6));os+=((on?1:0)-os)*.07;orb.visible=os>.02;
+if(orb.visible){boost*=.97;orb.scale.setScalar(os*clamp(hw/6.4,.55,1.1));orb.rotation.x=.5-my*.18;orb.rotation.y=mx*.4+now/9000;oc.rotation.y=now/700;oc.rotation.x=now/1100;
+chips.forEach(c=>{c.a+=c.v*dt*(1+boost);c.g.position.set(Math.cos(c.a)*c.r,0,Math.sin(c.a)*c.r);c.m.rotation.y+=dt*(1+boost)})}
+R.render(sc,cam)}
+requestAnimationFrame(loop);cv.style.opacity=1;
+glow.material.color.set(0x3ee6ff);
+}catch(e){console.warn('WebGL unavailable',e)}
+</script></body></html>
