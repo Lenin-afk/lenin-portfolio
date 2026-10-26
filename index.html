@@ -104,12 +104,43 @@ nav div{gap:1rem}
 }
 @media(prefers-reduced-motion:reduce){.flip,.v{animation:none;transition:none;opacity:1;transform:none}}
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1N2KSZHBM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-T1N2KSZHBM');
+</script>
+<script>
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('[data-resume-download]');
+
+    if (!link || typeof window.gtag !== 'function') {
+      return;
+    }
+
+    gtag('event', 'resume_download_click', {
+      file_name: 'Lenin_T_Resume.pdf',
+      link_url: link.href,
+      link_text: link.textContent.trim()
+    });
+  });
+</script>
 </head>
 <body>
 <canvas id="sig"></canvas><canvas id="c"></canvas><i id="dot"></i><div id="pb"><i></i></div>
 <nav><b>Lenin T</b><div><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav>
 <div class="soc"><a href="https://github.com/Lenin-afk">GitHub</a><a href="https://www.linkedin.com/in/lenin-t/">LinkedIn</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=leninrithick%40gmail.com" target="_blank" rel="noopener noreferrer">Mail</a></div>
-<a class="res" href="Lenin_T_Resume.pdf" download>Resume ↓</a>
+<a class="res"
+   href="Lenin_T_Resume.pdf"
+   download
+   data-resume-download>
+  Resume ↓
+</a>
 
 <section id="home"><div class="r hr"><p class="k v">Hello, I'm</p>
 <h1 class="v nm" style="--d:.1s">Lenin T</h1><p class="v role" style="--d:.2s"><span id="fw"><span class="flip">AI / ML</span></span> Engineer</p>
@@ -148,7 +179,7 @@ nav div{gap:1rem}
 <section id="contact" style="align-items:center;text-align:center"><p class="k v">Contact</p><h2 class="v" style="--d:.1s">Let's build<br>something <i>great</i></h2>
 <p class="v" style="--d:.2s;max-width:520px;margin:18px auto 28px;color:#b9b9c6">I'm looking for an entry-level role in AI/ML or software engineering. If you're hiring, or want to talk about something you're building, my inbox is open.</p>
 <a class="v mail" style="--d:.3s" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=leninrithick%40gmail.com" target="_blank" rel="noopener noreferrer">leninrithick@gmail.com</a>
-<div class="v" style="--d:.4s;margin-top:30px"><a class="btn p" href="Lenin_T_Resume.pdf" download>Download resume ↓</a><a class="btn" href="https://www.linkedin.com/in/lenin-t/">LinkedIn</a><a class="btn" href="https://github.com/Lenin-afk">GitHub</a></div>
+<div class="v" style="--d:.4s;margin-top:30px"><a class="btn p" href="Lenin_T_Resume.pdf" download data-resume-download>Download resume ↓</a><a class="btn" href="https://www.linkedin.com/in/lenin-t/">LinkedIn</a><a class="btn" href="https://github.com/Lenin-afk">GitHub</a></div>
 <p class="v" style="--d:.5s;margin-top:60px;font-size:12px;color:var(--mut);letter-spacing:.14em">© 2026 LENIN T · OPEN TO WORK</p></section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
